@@ -1,16 +1,14 @@
 
-import friends from "./friends.json";
-import FriendListItem from "./FriendListItem";
-import css from "../FriendList/FriendList.module.css"
+import FriendListItem from './FriendListItem';
+import css from "./FriendList.module.css";
 
-
-const FriendList = () => {
+const FriendList = ({ friends }) => {
   return (
     <ul className={css.list}>
-      {friends.map((item) => (
-        <li className={css.item} key={item.id}>
-            <FriendListItem avatar={item.avatar} name={item.name} isOnline={item.isOnline ? "Online" : "Offline"} />
-          </li>
+      {friends.map(friend => (
+        <li key={friend.id}>
+          <FriendListItem {...friend} />
+        </li>
       ))}
     </ul>
   );
