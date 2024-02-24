@@ -3,6 +3,8 @@ import './App.css'
 import FriendList from './components/FriendList/FriendList';
 import TransactionHistory from './components/TransactionHistory/TransactionHistory';
 import userData from "./userData.json";
+import frends from "./components/FriendList/friends.json";
+
 
 
 function App() {
@@ -16,7 +18,11 @@ function App() {
         image={userData.avatar}
         stats={userData.stats}
       />
-      <FriendList />
+      <FriendList
+        avatar={frends.avatar}
+        name={frends.name}
+        isOnline={frends.isOnline}
+      />
       <TransactionHistory />
     </>
   )
